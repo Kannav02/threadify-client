@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.typing-effect {
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent line breaks */
+    border-right: 1px solid black; /* Add a blinking cursor effect */
+    width: 0;
+    animation: typing 2s ease-out forwards, blink-caret 1.75s linear forwards;
+}
+
+
+@keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    75% {
+      border-color: white;
+    }
+  }
+
+  
+
+  .line {
+    animation-fill-mode: forwards; /* Set animation-fill-mode to maintain final state */
+  }
+  .custom-texture{
+    background-image: url("./images/always-grey.png");
+  }
+
+/* @layer utilities {
+  .animate-typing {
+    animation: typing 3s steps(40) 1s 1 normal both;
+  }
+} */
